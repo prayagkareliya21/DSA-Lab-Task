@@ -20,7 +20,13 @@ class SLL:
         temp = self.head
         while temp.next is not None:
             temp = temp.next
-            
+    def insert_position(self,data, position):
+        new_node=Node(data)
+        temp=self.head
+        for i in range(1,position-1):
+            temp=temp.next
+
+        new_node.next=temp.next    
         temp.next = new_node
 
     def display(self):
@@ -33,8 +39,9 @@ l1 = SLL()
 while True:
     print("1. insert begin")
     print("2. insert last")
-    print("3. display")
-    print("4. exit")
+    print("3. insert by position")
+    print("4. display")
+    print("5. exit")
     ch=int(input("enter your choice="))
 
     if ch==1:
@@ -44,8 +51,12 @@ while True:
         data=int(input("enter node value="))
         l1.insert_last(data)
     elif ch==3:
-        l1.display()
+        data=int(input("enter node value = "))
+        position=int(input("enter position = "))
+        l1.insert_position(data,position)
     elif ch==4:
+        l1.display()
+    elif ch==5:
         break
     else:
         print("invalid")
