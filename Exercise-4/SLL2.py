@@ -60,3 +60,4 @@ while True:
         break
     else:
         print("invalid")
+# You have to add delet operation of selected position value code.
